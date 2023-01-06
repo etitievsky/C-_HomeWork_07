@@ -7,14 +7,14 @@ int EnterData(string text)
     return number;
 }
 
-double[,] CreateArray(int rows, int columns, double minNumber, double maxNumber)
+double[,] CreateArray(int rows, int columns, int minNumber, int maxNumber)
 {
     double[,] array = new double[rows, columns];
     for(int i=0; i<rows; i++)
     {
         for(int j=0; j<columns; j++)
         {
-            array[i,j] = new Random().NextDouble() + new Random().Next(-10, 10);
+            array[i,j] = new Random().NextDouble() + new Random().Next(minNumber, maxNumber+1);
             array[i,j] = Math.Round(array[i,j],1);
         }
     }
